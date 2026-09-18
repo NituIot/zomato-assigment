@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Zomato Hero Section</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #fff;
+    }
+
+    /* Hero container */
+    .hero {
+      height: 100vh;
+      min-height: 600px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Background video layer */
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    /* Dark overlay layer */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 2;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 28px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 5;
+    }
+
+    .logo {
+      color: white;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 35px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    /* Hero content */
+    .hero-content {
+      position: relative;
+      z-index: 4;
+      text-align: center;
+      color: white;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(45px, 7vw, 80px);
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero-content p {
+      font-size: clamp(18px, 2vw, 25px);
+      margin-bottom: 35px;
+    }
+
+    /* Search box */
+    .search-box {
+      width: 100%;
+      max-width: 750px;
+      margin: auto;
+      background: white;
+      border-radius: 12px;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .location {
+      color: #777;
+      padding: 15px 20px;
+      border-right: 1px solid #ddd;
+      white-space: nowrap;
+    }
+
+    .search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 15px 20px;
+      font-size: 16px;
+    }
+
+    .search-btn {
+      border: none;
+      background: #e23744;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .search-btn:hover {
+      background: #cb2634;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+      }
+
+      .navbar {
+        justify-content: center;
+      }
+
+      .search-box {
+        flex-direction: column;
+        padding: 10px;
+        gap: 5px;
+      }
+
+      .location {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+      }
+
+      .search-input,
+      .search-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+
+    <!-- Background video -->
+    <video
+      class="hero-video"
+      autoplay
+      muted
+      loop
+      playsinline
+    >
+      <source
+        src="https://b.zmtcdn.com/data/file_assets/2627bbed9d6c068e50d2aadcca11ddbb1743095810.mp4"
+        type="video/mp4"
+      >
+    </video>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">zomato</div>
+
+      <ul class="nav-links">
+        <li><a href="#">Investor Relations</a></li>
+        <li><a href="#">Add Restaurant</a></li>
+        <li><a href="#">Log in</a></li>
+        <li><a href="#">Sign up</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero content -->
+    <div class="hero-content">
+      <h1>zomato</h1>
+
+      <p>
+        Discover the best food & drinks in your city
+      </p>
+
+      <div class="search-box">
+        <div class="location">
+          📍 Patna
+        </div>
+
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Search for restaurant, cuisine or a dish"
+        >
+
+        <button class="search-btn">
+          Search
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+</body>
+</html>
